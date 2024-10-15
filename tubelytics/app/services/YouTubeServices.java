@@ -26,7 +26,7 @@ public class YouTubeService {
                 .setQueryParameter("key", apiKey)
                 .get()
                 .thenApply(response -> {
-                    // Parse the response and collect the video descriptions
+                    // Task5: Parse the response and collect the video descriptions
                     return response.asJson().findPath("items").findValues("description")
                             .stream().map(desc -> desc.asText()).collect(Collectors.toList());
                 });
