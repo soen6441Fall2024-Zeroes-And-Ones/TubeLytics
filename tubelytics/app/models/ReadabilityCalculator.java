@@ -1,6 +1,6 @@
 package models;
 
-//This class will contain methods to calculate Flesch-Kincaid scores.
+// This class will contain methods to calculate Flesch-Kincaid scores.
 public class ReadabilityCalculator {
 
     public static double calculateFleschReadingEase(int totalWords, int totalSentences, int totalSyllables) {
@@ -32,18 +32,19 @@ public class ReadabilityCalculator {
         return count;
     }
 
-    //Add Methods for Counting Words: Add methods to count the total words in a given text.
+    // Method to count the total words in a given text.
     public static int countWords(String text) {
         if (text == null || text.isEmpty()) return 0;
         return text.trim().split("\\s+").length;
     }
-    //Add Methods for Sentences: Add methods to count the total sentences in a given text.
+
+    // Method to count the total sentences in a given text.
     public static int countSentences(String text) {
         if (text == null || text.isEmpty()) return 0;
         return text.split("[.!?]+").length;
     }
 
-    //Combine Counts for Readability Calculation : Create a method that takes the video description and returns the readability scores.
+    // Method that takes the video description and returns the readability scores.
     public static ReadabilityScores calculateScores(String description) {
         int totalWords = countWords(description);
         int totalSentences = countSentences(description);
@@ -56,6 +57,7 @@ public class ReadabilityCalculator {
         return new ReadabilityScores(readingEase, gradeLevel);
     }
 
+    // Inner class to encapsulate readability scores
     public static class ReadabilityScores {
         public double readingEase;
         public double gradeLevel;
@@ -65,7 +67,4 @@ public class ReadabilityCalculator {
             this.gradeLevel = gradeLevel;
         }
     }
-
-
-
 }

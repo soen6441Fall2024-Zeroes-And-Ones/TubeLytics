@@ -1,0 +1,14 @@
+@(averageReadingEase: Double, averageGradeLevel: Double, descriptions: List[String])
+
+@main("Readability Analysis") {
+<h1>Readability Analysis</h1>
+<p><strong>Average Flesch-Kincaid Reading Ease:</strong> @averageReadingEase</p>
+<p><strong>Average Flesch-Kincaid Grade Level:</strong> @averageGradeLevel</p>
+
+<h2>Video Descriptions</h2>
+<ul>
+    @for(description <- descriptions) {
+    <li>@description</li>
+    }
+</ul>
+}
