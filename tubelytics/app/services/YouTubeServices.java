@@ -17,7 +17,7 @@ public class YouTubeService {
     // Fetch video descriptions from the YouTube API
     public CompletionStage<List<String>> getVideoDescriptions(String searchQuery) {
         String apiUrl = "https://www.googleapis.com/youtube/v3/search";
-        String apiKey = " AIzaSyAaY-Gd4Pej_zGKFpCzYKPXj2r8ejfW5aA";
+        String apiKey = "AIzaSyAaY-Gd4Pej_zGKFpCzYKPXj2r8ejfW5aA";
 
         return ws.url(apiUrl)
                 .setQueryParameter("part", "snippet")
